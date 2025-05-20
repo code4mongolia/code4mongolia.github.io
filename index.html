@@ -48,7 +48,7 @@ footer {
 <body>
 <header><a href="?lang=mn">MN</a> / <a href="?lang=ja">JA</a> / <a href="?lang=en">EN</a></header>
 
-<img class="logo" src="./code4mongolia.png">
+<img class="logo" id="imglogo" src="./code4mongolia.png">
 <h1>Code for Mongolia</h1>
 <p lang="ja">テクノロジーで地域課題を解決する、モンゴル発のシビックテック</p>
 <p></p>
@@ -110,13 +110,21 @@ footer {
   <a href="https://creativecommons.org/licenses/by/4.0/"">CC BY</a> 2025 <a href=https://github.com/code4mongolia>Code for Mongolia</a><br>
   <a href=https://github.com/code4mongolia/code4mongolia.github.io/>src on GitHub</a><br>
   <br>
-  <script type="module">rc="https://code4fukui.github.io/qr-code/qr-code.js"></script>
-  <qr-code></qr-code>
+  <script type="module" src="https://code4fukui.github.io/qr-code/qr-code.js"></script>
+  <qr-code></qr-code><br>
   <img class="logomini" src="./code4mongolia.png">
+
+  <div>navigator.language: <span id="spanlang"></span></div>
 </footer>
 
 <script type="module" src="./trans.js"></script>
 
+<script type="module">
+imglogo.onclick = () => {
+  imglogo.requestFullscreen();
+};
+spanlang.textContent = navigator.language;
+</script>
 
 </body>
 </html>
