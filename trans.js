@@ -2,8 +2,10 @@ import { CSV } from "https://js.sabae.cc/CSV.js";
 
 addEventListener("load", async () => {
   const lang0 = navigator.language;
+  const n = lang0.indexOf("_");
+  const lang1 = n >= 0 ? lang0.substring(0, n) : lang0;
   const params = new URLSearchParams(location.search);
-  const lang = params.get("lang") || lang0;
+  const lang = params.get("lang") || lang1;
   if (lang == "ja") return;
   
   console.log("translate ja to " + lang);
